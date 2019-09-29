@@ -1,4 +1,3 @@
-import PyPDF2
 import re
 import os
 import nltk
@@ -11,8 +10,8 @@ import numpy
 from numpy import linalg as LA
 
 docs = []
-
-csv_file = open('content.csv', 'rb')
+content = input("Enter the complete path of docs file(csv): ")
+csv_file = open(content, 'rb')
 for line in csv_file.readlines():
 	# print(line)
 	page_content = line.decode().split(',')[1]
@@ -28,8 +27,8 @@ for line in csv_file.readlines():
 
 
 abstract = []
-
-csv_file = open('abs.csv', 'rb')
+abs = input("Enter the complete path of abstract file(csv): ")
+csv_file = open(abs, 'rb')
 for line in csv_file.readlines():
 	# print(line)
 	page_content = line.decode().split(',')[1]
