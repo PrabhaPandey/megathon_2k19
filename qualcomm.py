@@ -7,10 +7,11 @@ from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import CountVectorizer
 import csv
 import numpy
+import sys
 from numpy import linalg as LA
 
 docs = []
-content = input("Enter the complete path of docs file(csv): ")
+content = sys.argv[1]
 csv_file = open(content, 'rb')
 for line in csv_file.readlines():
 	# print(line)
@@ -27,7 +28,7 @@ for line in csv_file.readlines():
 
 
 abstract = []
-abs = input("Enter the complete path of abstract file(csv): ")
+abs = sys.argv[2]
 csv_file = open(abs, 'rb')
 for line in csv_file.readlines():
 	# print(line)
